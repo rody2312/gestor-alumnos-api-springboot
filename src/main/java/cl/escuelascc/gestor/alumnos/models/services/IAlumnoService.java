@@ -8,4 +8,12 @@ public interface IAlumnoService {
 	
 	public List<Alumno> findAll();
 	
+	public Alumno findById(Long id);
+	
+	public Alumno save(Alumno alumno);
+	
+	public void delete(Long id);
+	
+	
+	
 }

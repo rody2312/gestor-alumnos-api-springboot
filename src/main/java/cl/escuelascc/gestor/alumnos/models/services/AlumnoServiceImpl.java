@@ -18,8 +18,28 @@ public class AlumnoServiceImpl implements IAlumnoService{
 	@Override
 	@Transactional(readOnly = true)
 	public List<Alumno> findAll() {
-		// TODO Auto-generated method stub
 		return (List<Alumno>) alumnoDao.findAll();
 	}
+
+	@Override
+	@Transactional(readOnly = true)
+	public Alumno findById(Long id) {
+		return alumnoDao.findById(id).orElse(null);
+	}
+
+	@Override
+	@Transactional
+	public Alumno save(Alumno alumno) {
+		return alumnoDao.save(alumno);
+	}
+
+	@Override
+	@Transactional
+	public void delete(Long id) {
+		alumnoDao.deleteById(id);
+		
+	}
+
+	
 
 }
